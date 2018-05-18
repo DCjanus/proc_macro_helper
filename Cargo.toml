@@ -1,0 +1,9 @@
+[package]
+name = "proc_macro_helper"
+version = "0.1.0"
+authors = ["DCjanus <DCjanus@dcjanus.com>"]
+
+[dependencies]
+syn = { version = "0.13", features = ["extra-traits"] }
+quote = "0.5"
+
