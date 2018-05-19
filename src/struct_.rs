@@ -4,21 +4,23 @@ use syn::DeriveInput;
 
 #[derive(Debug, Default, Eq, PartialEq)]
 pub struct Struct {
-    pub attribute: Attribute,
+    pub attributes: Vec<Attribute>,
     pub name: String,
     pub fields: Vec<Field>,
 }
 
-impl From<DeriveInput> for Struct {
-    fn from(source: DeriveInput) -> Self {
+impl Struct {
+    pub fn parse(source: &DeriveInput) -> Self {
         let mut result = Self::default();
 
         result.name = source.ident.to_string();
 
-        source
+        result.attributes = source
             .attrs
             .iter()
-            .for_each(|x| result.attribute.push(&x.interpret_meta().unwrap()));
+            .map(|x| x.interpret_meta().unwrap())
+            .map(|x| Attribute::parse(&x))
+            .collect();
 
         let fields: ::syn::Fields = match &source.data {
             ::syn::Data::Struct(x) => x.fields.clone(),

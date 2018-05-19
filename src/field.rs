@@ -3,8 +3,8 @@ use attribute::Attribute;
 #[derive(Debug, Eq, PartialEq)]
 pub struct Field {
     pub name: Option<String>,
-    pub ty: String,
-    pub attribute: Attribute,
+    pub type_name: String,
+    pub attributes: Vec<Attribute>,
     pub raw_type: ::syn::Type,
 }
 
@@ -12,8 +12,8 @@ impl Default for Field {
     fn default() -> Self {
         Field {
             name: None,
-            ty: String::new(),
-            attribute: Attribute::default(),
+            type_name: String::new(),
+            attributes: Vec::new(),
             raw_type: default_syn_type(),
         }
     }
@@ -25,12 +25,14 @@ impl Field {
 
         result.name = source.ident.map(|x| x.to_string());
 
-        result.ty = description_type(&source.ty).replace(" ", "");
+        result.type_name = description_type(&source.ty).replace(" ", "");
 
-        source
+        result.attributes = source
             .attrs
             .iter()
-            .for_each(|x| result.attribute.push(&x.interpret_meta().unwrap()));
+            .map(|x| x.interpret_meta().unwrap())
+            .map(|x| Attribute::parse(&x))
+            .collect();
 
         result.raw_type = source.ty.clone();
 
