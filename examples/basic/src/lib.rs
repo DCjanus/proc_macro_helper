@@ -1,12 +1,14 @@
-# Procedural Macros Helper
+extern crate proc_macro;
+extern crate proc_macro_helper;
+#[macro_use]
+extern crate quote;
+extern crate syn;
 
-Since 1.15.0(2017-02-02), basic procedural macros allowing custom `#[derive]`. To use it, you could assign a function as handler, this handler take a `TokenStream` for target `Struct` or `Enum`.
+use proc_macro::TokenStream;
+use proc_macro_helper::Struct;
+use syn::Data;
+use syn::DeriveInput;
 
-But read directly from `TokenStream` is cumbersome, instead, you can read it via `syn`, a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code. 
-
-But for generality, `syn` is very complex. In your code, there must be a lot noise:
-
-```rust
 #[proc_macro_derive(Table1, attributes(PrimaryKey))]
 pub fn table1(input: TokenStream) -> TokenStream {
     let derive_input = syn::parse::<DeriveInput>(input).unwrap();
@@ -35,11 +37,7 @@ pub fn table1(input: TokenStream) -> TokenStream {
     ];)
         .into()
 }
-```
 
-With this repo, your code could be:
-
-```rust
 #[proc_macro_derive(Table2, attributes(PrimaryKey))]
 pub fn table2(input: TokenStream) -> TokenStream {
     let derive_input = syn::parse::<DeriveInput>(input).unwrap();
@@ -56,16 +54,3 @@ pub fn table2(input: TokenStream) -> TokenStream {
     ];)
         .into()
 }
-
-```
-
-# Current status
-
-+ Need more test cases.
-+ Need more feature request.
-+ Need more bug reports.
-
-# TODO
-
-+ Implement helper for enum
-+ Remove dependency on `quote`

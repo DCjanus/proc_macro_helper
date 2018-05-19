@@ -1,0 +1,12 @@
+[package]
+name = "basic"
+version = "0.1.0"
+authors = ["DCjanus <DCjanus@dcjanus.com>"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc_macro_helper = { path = "../../" }
+quote = "0.5"
+syn = { version = "0.13", features = ["extra-traits"] }
