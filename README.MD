@@ -1,3 +1,5 @@
+[![build status](https://api.travis-ci.org/DCjanus/proc_macro_helper.svg?branch=master)](https://travis-ci.org/DCjanus/proc_macro_helper)
+
 # Procedural Macros Helper
 
 Since 1.15.0(2017-02-02), basic procedural macros allowing custom `#[derive]`. To use it, you could assign a function as handler, this handler take a `TokenStream` for target `Struct` or `Enum`.
