@@ -247,8 +247,10 @@ mod base_test {
 
     #[test]
     fn base_test() {
+        use self::proc_macro_helper::prelude::*;
+
         let derive_input = syn::parse_str::<syn::DeriveInput>(SAMPLE).unwrap();
-        let target_struct = proc_macro_helper::Struct::parse(&derive_input);
+        let target_struct = Struct::parse(&derive_input);
         debug_assert_eq!(&format!("{:#?}", target_struct), TARGET)
     }
 }
