@@ -42,7 +42,7 @@ pub fn table1(input: TokenStream) -> TokenStream {
 With this repo, your code could be:
 
 ```rust
-use proc_macro_helper::prelude;
+use proc_macro_helper::prelude::*;
 
 #[proc_macro_derive(Table2, attributes(PrimaryKey))]
 pub fn table2(input: TokenStream) -> TokenStream {
