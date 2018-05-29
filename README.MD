@@ -71,5 +71,5 @@ pub fn table2(input: TokenStream) -> TokenStream {
 
 # TODO
 
-+ Implement helper for enum
-+ Remove dependency on `quote`
+- [x] Implement helper for enum
+- [ ] Remove dependency on `quote`
