@@ -2,7 +2,7 @@ use attribute::*;
 use field::*;
 use syn::DeriveInput;
 
-#[derive(Debug, Default, Eq, PartialEq)]
+#[derive(Debug, Default, Eq, PartialEq, Clone)]
 pub struct Struct {
     pub attributes: Vec<Attribute>,
     pub name: String,

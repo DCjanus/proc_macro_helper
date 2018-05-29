@@ -2,7 +2,7 @@ use attribute::Attribute;
 use field::Field;
 use syn;
 
-#[derive(Debug, Default, Eq, PartialEq)]
+#[derive(Debug, Default, Eq, PartialEq, Clone)]
 pub struct Variant {
     pub name: String,
     pub fields: Vec<Field>,

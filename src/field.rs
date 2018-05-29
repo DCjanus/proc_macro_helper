@@ -1,6 +1,6 @@
 use attribute::Attribute;
 
-#[derive(Debug, Eq, PartialEq)]
+#[derive(Debug, Eq, PartialEq, Clone)]
 pub struct Field {
     pub name: Option<String>,
     pub type_name: String,

@@ -2,7 +2,7 @@ use attribute::*;
 use syn::DeriveInput;
 use variant::Variant;
 
-#[derive(Debug, Default, Eq, PartialEq)]
+#[derive(Debug, Default, Eq, PartialEq, Clone)]
 pub struct Enum {
     pub attributes: Vec<Attribute>,
     pub name: String,

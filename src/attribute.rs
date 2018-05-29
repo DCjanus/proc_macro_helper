@@ -1,6 +1,6 @@
 use syn::{Lit as Literal, Meta, NestedMeta};
 
-#[derive(Debug, Default, Eq, PartialEq)]
+#[derive(Debug, Default, Eq, PartialEq, Clone)]
 pub struct Attribute {
     pub name: String,
     pub sub_nodes: Vec<Attribute>,
