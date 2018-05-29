@@ -2,6 +2,20 @@
 name = "proc_macro_helper"
 version = "0.1.0"
 authors = ["DCjanus <DCjanus@dcjanus.com>"]
+description = "Procedural macros helper"
+license = "MIT"
+repository = "https://github.com/DCjanus/proc_macro_helper"
+documentation = "https://docs.rs/proc_macro_helper"
+readme = "README.MD"
+
+exclude = [
+    ".gitignore",
+    "pre-commit",
+    "README.MD",
+    "rustfmt.toml",
+    "tests/*",
+    ".travis.yml",
+]
 
 [dependencies]
 syn = { version = "0.13", features = ["extra-traits"] }
