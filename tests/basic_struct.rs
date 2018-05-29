@@ -1,9 +1,7 @@
-#[cfg(test)]
-mod base_test {
-    extern crate proc_macro_helper;
-    extern crate syn;
+extern crate proc_macro_helper;
+extern crate syn;
 
-    const SAMPLE: &'static str = r#"
+const SAMPLE: &'static str = r#"
     #[Foo(I, Don("'t"), Known, What, Should(i = "do"))]
     struct User {
         #[But(it("'s"), seems = "cool")]
@@ -13,7 +11,7 @@ mod base_test {
     }
 "#;
 
-    const TARGET: &'static str = r#"Struct {
+const TARGET: &'static str = r#"Struct {
     attributes: [
         Attribute {
             name: "Foo",
@@ -245,12 +243,11 @@ mod base_test {
     ]
 }"#;
 
-    #[test]
-    fn base_test() {
-        use self::proc_macro_helper::prelude::*;
+#[test]
+fn basic_test() {
+    use self::proc_macro_helper::prelude::*;
 
-        let derive_input = syn::parse_str::<syn::DeriveInput>(SAMPLE).unwrap();
-        let target_struct = Struct::parse(&derive_input);
-        debug_assert_eq!(&format!("{:#?}", target_struct), TARGET)
-    }
+    let derive_input = syn::parse_str::<syn::DeriveInput>(SAMPLE).unwrap();
+    let target_struct = Struct::parse(&derive_input);
+    debug_assert_eq!(&format!("{:#?}", target_struct), TARGET)
 }
