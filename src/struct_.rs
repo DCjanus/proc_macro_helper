@@ -22,8 +22,8 @@ impl Struct {
             .map(|x| Attribute::parse(&x))
             .collect();
 
-        let fields: ::syn::Fields = match &source.data {
-            ::syn::Data::Struct(x) => x.fields.clone(),
+        let fields: &::syn::Fields = match &source.data {
+            ::syn::Data::Struct(x) => &x.fields,
             _ => panic!("only support strutc"),
         };
         result.fields = match fields {
