@@ -11,7 +11,6 @@ mod variant;
 
 pub mod prelude {
     pub use attribute::Attribute;
-    pub use attribute::AttributeType;
     pub use enum_::Enum;
     pub use field::Field;
     pub use struct_::Struct;

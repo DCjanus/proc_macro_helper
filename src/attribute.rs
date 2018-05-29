@@ -8,16 +8,6 @@ pub struct Attribute {
 }
 
 impl Attribute {
-    pub fn ty(&self) -> AttributeType {
-        if self.values.is_empty() {
-            AttributeType::Pair
-        } else if self.sub_nodes.is_empty() {
-            AttributeType::None
-        } else {
-            AttributeType::Nest
-        }
-    }
-
     pub fn parse(source: &Meta) -> Self {
         let mut result = Attribute {
             name: source.name().to_string(),
@@ -43,11 +33,4 @@ impl Attribute {
 
         result
     }
-}
-
-#[derive(Debug, Eq, PartialEq)]
-pub enum AttributeType {
-    None,
-    Nest,
-    Pair,
 }
