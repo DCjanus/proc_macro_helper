@@ -4,6 +4,8 @@ use syn::{Lit as Literal, Meta, NestedMeta};
 pub struct Attribute {
     pub name: String,
     pub sub_nodes: Vec<Attribute>,
+    /// Attributes like `#[foo("a", "b")]` isn't valid yet(rust 1.26.0), but in the future, it could be.
+    /// See: https://github.com/rust-lang/rust/issues/34981
     pub values: Vec<Literal>,
 }
 
