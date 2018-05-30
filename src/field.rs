@@ -22,6 +22,7 @@ impl Default for Field {
 impl Field {
     pub fn parse(source: &::syn::Field) -> Self {
         let mut result = Self::default();
+        let source = source.clone();
 
         result.name = source.ident.map(|x| x.to_string());
 

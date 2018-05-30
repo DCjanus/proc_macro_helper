@@ -116,9 +116,8 @@ const TARGET: &'static str = r#"Struct {
                         segments: [
                             PathSegment {
                                 ident: Ident {
-                                    term: Term {
-                                        sym: String
-                                    }
+                                    sym: String,
+                                    raw: false
                                 },
                                 arguments: None
                             }
@@ -141,9 +140,8 @@ const TARGET: &'static str = r#"Struct {
                         segments: [
                             PathSegment {
                                 ident: Ident {
-                                    term: Term {
-                                        sym: Option
-                                    }
+                                    sym: Option,
+                                    raw: false
                                 },
                                 arguments: AngleBracketed(
                                     AngleBracketedGenericArguments {
@@ -159,9 +157,8 @@ const TARGET: &'static str = r#"Struct {
                                                             segments: [
                                                                 PathSegment {
                                                                     ident: Ident {
-                                                                        term: Term {
-                                                                            sym: u16
-                                                                        }
+                                                                        sym: u16,
+                                                                        raw: false
                                                                     },
                                                                     arguments: None
                                                                 }
@@ -197,9 +194,8 @@ const TARGET: &'static str = r#"Struct {
                             (
                                 PathSegment {
                                     ident: Ident {
-                                        term: Term {
-                                            sym: some
-                                        }
+                                        sym: some,
+                                        raw: false
                                     },
                                     arguments: None
                                 },
@@ -208,9 +204,8 @@ const TARGET: &'static str = r#"Struct {
                             (
                                 PathSegment {
                                     ident: Ident {
-                                        term: Term {
-                                            sym: thing
-                                        }
+                                        sym: thing,
+                                        raw: false
                                     },
                                     arguments: None
                                 },
@@ -219,9 +214,8 @@ const TARGET: &'static str = r#"Struct {
                             (
                                 PathSegment {
                                     ident: Ident {
-                                        term: Term {
-                                            sym: about
-                                        }
+                                        sym: about,
+                                        raw: false
                                     },
                                     arguments: None
                                 },
@@ -229,9 +223,8 @@ const TARGET: &'static str = r#"Struct {
                             ),
                             PathSegment {
                                 ident: Ident {
-                                    term: Term {
-                                        sym: Gender
-                                    }
+                                    sym: Gender,
+                                    raw: false
                                 },
                                 arguments: None
                             }

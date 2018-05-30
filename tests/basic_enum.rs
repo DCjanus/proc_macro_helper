@@ -90,9 +90,8 @@ const TARGET: &'static str = r#"Enum {
                                 segments: [
                                     PathSegment {
                                         ident: Ident {
-                                            term: Term {
-                                                sym: String
-                                            }
+                                            sym: String,
+                                            raw: false
                                         },
                                         arguments: None
                                     }
@@ -154,9 +153,8 @@ const TARGET: &'static str = r#"Enum {
                                 segments: [
                                     PathSegment {
                                         ident: Ident {
-                                            term: Term {
-                                                sym: String
-                                            }
+                                            sym: String,
+                                            raw: false
                                         },
                                         arguments: None
                                     }
