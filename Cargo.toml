@@ -1,6 +1,6 @@
 [package]
 name = "proc_macro_helper"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["DCjanus <DCjanus@dcjanus.com>"]
 description = "Procedural macros helper"
 license = "MIT"
