@@ -115,10 +115,9 @@ const TARGET: &'static str = r#"Struct {
                         leading_colon: None,
                         segments: [
                             PathSegment {
-                                ident: Ident {
-                                    sym: String,
-                                    raw: false
-                                },
+                                ident: Ident(
+                                    String
+                                ),
                                 arguments: None
                             }
                         ]
@@ -139,10 +138,9 @@ const TARGET: &'static str = r#"Struct {
                         leading_colon: None,
                         segments: [
                             PathSegment {
-                                ident: Ident {
-                                    sym: Option,
-                                    raw: false
-                                },
+                                ident: Ident(
+                                    Option
+                                ),
                                 arguments: AngleBracketed(
                                     AngleBracketedGenericArguments {
                                         colon2_token: None,
@@ -156,10 +154,9 @@ const TARGET: &'static str = r#"Struct {
                                                             leading_colon: None,
                                                             segments: [
                                                                 PathSegment {
-                                                                    ident: Ident {
-                                                                        sym: u16,
-                                                                        raw: false
-                                                                    },
+                                                                    ident: Ident(
+                                                                        u16
+                                                                    ),
                                                                     arguments: None
                                                                 }
                                                             ]
@@ -191,41 +188,31 @@ const TARGET: &'static str = r#"Struct {
                             Colon2
                         ),
                         segments: [
-                            (
-                                PathSegment {
-                                    ident: Ident {
-                                        sym: some,
-                                        raw: false
-                                    },
-                                    arguments: None
-                                },
-                                Colon2
-                            ),
-                            (
-                                PathSegment {
-                                    ident: Ident {
-                                        sym: thing,
-                                        raw: false
-                                    },
-                                    arguments: None
-                                },
-                                Colon2
-                            ),
-                            (
-                                PathSegment {
-                                    ident: Ident {
-                                        sym: about,
-                                        raw: false
-                                    },
-                                    arguments: None
-                                },
-                                Colon2
-                            ),
                             PathSegment {
-                                ident: Ident {
-                                    sym: Gender,
-                                    raw: false
-                                },
+                                ident: Ident(
+                                    some
+                                ),
+                                arguments: None
+                            },
+                            Colon2,
+                            PathSegment {
+                                ident: Ident(
+                                    thing
+                                ),
+                                arguments: None
+                            },
+                            Colon2,
+                            PathSegment {
+                                ident: Ident(
+                                    about
+                                ),
+                                arguments: None
+                            },
+                            Colon2,
+                            PathSegment {
+                                ident: Ident(
+                                    Gender
+                                ),
                                 arguments: None
                             }
                         ]

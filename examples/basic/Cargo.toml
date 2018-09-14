@@ -8,5 +8,5 @@ proc-macro = true
 
 [dependencies]
 proc_macro_helper = { path = "../../" }
-quote = "0.5"
-syn = { version = "0.13", features = ["extra-traits"] }
+quote = "0.6"
+syn = { version = "0.15", features = ["extra-traits"] }

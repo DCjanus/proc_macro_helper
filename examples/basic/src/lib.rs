@@ -28,7 +28,7 @@ pub fn table1(input: TokenStream) -> TokenStream {
                 .find(|x| x.interpret_meta().unwrap().name() == "PrimaryKey")
                 .is_some()
         })
-        .map(|x| x.ident.unwrap().to_string())
+        .map(|x| x.ident.clone().unwrap().to_string())
         .collect();
     let result_len = primary_field_idents.len();
 
