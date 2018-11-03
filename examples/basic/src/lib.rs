@@ -5,7 +5,7 @@ extern crate quote;
 extern crate syn;
 
 use proc_macro::TokenStream;
-use proc_macro_helper::prelude::*;
+use proc_macro_helper::*;
 use syn::Data;
 use syn::DeriveInput;
 

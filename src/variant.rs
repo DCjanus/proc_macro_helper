@@ -1,5 +1,4 @@
-use attribute::Attribute;
-use field::Field;
+use crate::{attribute::Attribute, field::Field};
 use syn;
 
 #[derive(Debug, Default, Eq, PartialEq, Clone)]

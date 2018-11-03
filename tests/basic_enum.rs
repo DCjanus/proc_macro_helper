@@ -1,6 +1,3 @@
-extern crate proc_macro_helper;
-extern crate syn;
-
 const SAMPLE: &'static str = r#"
     #[Foo(I, Don("'t"), Known, What, Should(i = "do"))]
     enum HTTPMethod {
@@ -230,7 +227,7 @@ const TARGET: &'static str = r#"Enum {
 
 #[test]
 fn basic_test() {
-    use self::proc_macro_helper::prelude::*;
+    use proc_macro_helper::*;
 
     let derive_input = syn::parse_str::<syn::DeriveInput>(SAMPLE).unwrap();
     let target_enum = Enum::parse(&derive_input);

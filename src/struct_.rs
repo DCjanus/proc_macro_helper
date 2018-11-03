@@ -1,5 +1,4 @@
-use attribute::*;
-use field::*;
+use crate::{attribute::*, field::*};
 use syn::DeriveInput;
 
 #[derive(Debug, Default, Eq, PartialEq, Clone)]

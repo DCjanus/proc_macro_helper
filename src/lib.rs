@@ -1,17 +1,9 @@
-#[macro_use]
-extern crate quote;
-extern crate syn;
+pub use crate::{
+    attribute::Attribute, enum_::Enum, field::Field, struct_::Struct, variant::Variant,
+};
 
 mod attribute;
 mod enum_;
 mod field;
 mod struct_;
 mod variant;
-
-pub mod prelude {
-    pub use attribute::Attribute;
-    pub use enum_::Enum;
-    pub use field::Field;
-    pub use struct_::Struct;
-    pub use variant::Variant;
-}

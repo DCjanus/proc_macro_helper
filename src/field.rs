@@ -1,4 +1,5 @@
-use attribute::Attribute;
+use crate::attribute::Attribute;
+use quote::quote;
 
 #[derive(Debug, Eq, PartialEq, Clone)]
 pub struct Field {

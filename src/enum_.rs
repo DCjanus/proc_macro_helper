@@ -1,6 +1,5 @@
-use attribute::*;
+use crate::{attribute::*, variant::Variant};
 use syn::DeriveInput;
-use variant::Variant;
 
 #[derive(Debug, Default, Eq, PartialEq, Clone)]
 pub struct Enum {
