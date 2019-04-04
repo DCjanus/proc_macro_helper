@@ -1,3 +1,5 @@
+**DEPRECATED: It is recommended to use [darling](https://github.com/TedDriggs/darling)**
+
 [![build status](https://api.travis-ci.org/DCjanus/proc_macro_helper.svg?branch=master)](https://travis-ci.org/DCjanus/proc_macro_helper)
 
 *Deprecated*: replaced by `syn::DataStruct` or `syn::DataEnum`
